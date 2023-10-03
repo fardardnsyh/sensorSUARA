@@ -23,7 +23,6 @@ digitalWrite(pinRelay, LOW);
 }
 
 void loop(){
-
 nilaiSensor = analogRead(pinSensor);
 Serial.print ("Sensor = ");
 Serial.println(nilaiSensor);
@@ -31,6 +30,7 @@ Serial.println(nilaiSensor);
 if (nilaiSensor > 550) {
 
 digitalWrite(pinRelay, HIGH);
+digitalWrite(buzzer, HIGH);  
 Serial.print ("Sensor = ");
 Serial.print (nilaiSensor);
 Serial.println ("\t => SUARA TERDETEKSI");
@@ -49,6 +49,7 @@ else {
 
 //turn Relay off:
 digitalWrite(pinRelay, LOW);
+digitalWrite(buzzer, LOW);    
 lcd.setCursor(0, 0);
   lcd.print("Sensor =  ");
   lcd.print(nilaiSensor);
